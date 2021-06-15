@@ -29,14 +29,15 @@
     <div class="container">
         <main role="main" class="pb-3">
             <h1 class="display-3 font-weight-bold text-center">PERU FAILS</h1>
+
             <div class="nav-item d-flex col-12 mt-5 text-center" style="margin-bottom: 5%;">
                 <a class=" nav-link text-dark col-3" style="box-shadow: black 0px 0px 2px 2px;" asp-area="" asp-controller="Home" asp-action="NoLogeado">Pagina Principal</a>
-                <a class=" nav-link text-dark col-3" style="box-shadow: black 0px 0px 2px 2px;" asp-area="" asp-controller="Usuarios" asp-action="Subir">Subir Fail</a>
+                <a class=" nav-link text-dark col-3" style="box-shadow: black 0px 0px 2px 2px;" href='/Usuarios/Validar/@ViewData["id"]'>Subir Fail</a>
                 <a class=" nav-link text-dark col-3" style="box-shadow: black 0px 0px 2px 2px;" asp-area="" asp-controller="Usuarios" asp-action="Usuario">Crear Cuenta</a>
                 <a class=" nav-link text-dark col-3" style="box-shadow: black 0px 0px 2px 2px;" asp-area="" asp-controller="Home" asp-action="Login">Iniciar Sesion</a>
             </div>
             @RenderBody()
-
+            
         </main>
     </div>
 

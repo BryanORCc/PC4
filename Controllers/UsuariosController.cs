@@ -26,6 +26,25 @@ namespace PC4.Controllers
             return View(u);
         }
 
+        public IActionResult Validar(int id){
+            var usuario = _context.DataUsuarios.Where(x=>x.Id==id).ToList();
+            if(usuario.Count==0){
+                return View("Usuario");
+            }
+            else{
+                return View("Publicar");
+            }
+        }
+
+        public IActionResult Publicar(string id){
+            var u = _context.DataUsuarios.Where(x => x.UsuarioId.Equals(id)).ToList();
+            foreach (var item in u)
+            {   
+                ViewBag.usuario = item.Id;
+            }
+            
+            return View();
+        }
         
     }
 }
