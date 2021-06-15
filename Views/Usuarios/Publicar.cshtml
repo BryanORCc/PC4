@@ -6,8 +6,15 @@
 
     <div class="form-group">
         <label for="Titulo">Titulo de la publicacion</label>
-        <input asp-for="Titulo">
+        <input asp-for="Titulo" class="form-control" placeholder="ingresar titulo...">
     </div>
 
+    <div class="form-group">
+        <label for="Foto">Url de la foto</label>
+        <input asp-for="Foto" class="form-control" placeholder="ingresar url...">
+    </div>
+
+    <input hidden asp-for="UsuarioId" asp-items="ViewBag.usuario">
+    
 </form>
 
