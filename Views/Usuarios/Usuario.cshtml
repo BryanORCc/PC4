@@ -1,0 +1,26 @@
+@model Usuario
+
+<h1>Crear Cuenta</h1>
+
+<form action="" method="post">
+    <div class="form-group">
+        <label for="Id">ID</label>
+        <input asp-for="UsuarioId" required class="form-control" placeholder="Ingresar Id...">
+    </div>
+
+    <div class="form-group">
+        <label for="Contraseña">Contrase{a</label>
+        <input asp-for="Contraseña" required type="password" class="form-control" placeholder="*******">
+    </div>
+
+    <div class="form-group">
+        <label for="Nick">Nick</label>
+        <input asp-for="Nick" required class="form-control" placeholder="Ingresar Nick...">
+    </div>
+
+    <div class="form-group">
+        <label for="Foto">Foto de perfil</label>
+        <input asp-for="Foto" class="form-control" placeholder="Url de la imagen...">
+    </div>
+    <button class="btn btn-info">Registrar</button>
+</form>
