@@ -1,5 +1,6 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using PC4.Models;
 
 namespace PC4.Controllers
@@ -11,6 +12,7 @@ namespace PC4.Controllers
         public UsuariosController(PC4Context context){
             _context = context;
         }
+        
 
         public IActionResult Usuario(){
             return View();
@@ -36,14 +38,20 @@ namespace PC4.Controllers
             }
         }
 
-        public IActionResult Publicar(string id){
-            var u = _context.DataUsuarios.Where(x => x.UsuarioId.Equals(id)).ToList();
-            foreach (var item in u)
-            {   
-                ViewBag.usuario = item.Id;
-            }
-            
+        public IActionResult Publicar(){
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Publicar(Publicacion p){
+        
+            if(ModelState.IsValid){
+                _context.Add(p);
+                _context.SaveChanges();
+                return Redirect("/Home/Index");
+            }
+        
+            return View(p);
         }
         
     }

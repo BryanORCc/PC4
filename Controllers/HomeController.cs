@@ -23,7 +23,7 @@ namespace PC4.Controllers
 
         public IActionResult Index()
         {
-            var usuario = _context.DataUsuarios.ToList();
+            var usuario = _context.DataPublicaciones.OrderBy(x => x.Id).ToList();
             return View(usuario);
         }
 
@@ -38,7 +38,7 @@ namespace PC4.Controllers
 
         [HttpPost]
         public IActionResult Login(Login l){
-            var usuario = _context.DataUsuarios.Where(x => x.UsuarioId.Equals(l.id));
+            var usuario = _context.DataUsuarios.Where(x => x.Usr.Equals(l.id));
 
             if(usuario.Count()!=0){
                 ID = l.id;

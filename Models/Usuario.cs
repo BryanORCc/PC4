@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PC4.Models
@@ -7,7 +8,7 @@ namespace PC4.Models
         public int Id { get; set; }
 
         [Required]
-        public string UsuarioId { get; set; }
+        public string Usr { get; set; }
         [Required]
         public string Contraseña { get; set; }
         [Required]
